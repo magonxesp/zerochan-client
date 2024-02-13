@@ -1,4 +1,5 @@
 # Zerochan Client
+[![](https://jitpack.io/v/magonxesp/zerochan-client.svg)](https://jitpack.io/#magonxesp/zerochan-client)
 
 Zerochan API client for kotlin
 
@@ -16,7 +17,7 @@ And now you should add the `kotlinx-coroutines-core` dependency from JetBrains a
 ```kotlin
 dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_corroutines_version") // required
-    implementation("<TODO add dependency notation>")
+    implementation("com.github.magonxesp:zerochan-client:0.0.1")
 }
 ```
 
