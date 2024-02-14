@@ -1,23 +1,14 @@
 # Zerochan Client
-[![](https://jitpack.io/v/magonxesp/zerochan-client.svg)](https://jitpack.io/#magonxesp/zerochan-client)
 
 Zerochan API client for kotlin
 
 ## Installation
-Add on your `build.gradle.kts` the Jitpack repository
-
-```kotlin
-repositories {
-    maven { setUrl("https://jitpack.io") }
-}
-```
-
-And now you should add the `kotlinx-coroutines-core` dependency from JetBrains and the zerochan client dependency
+Add the `kotlinx-coroutines-core` dependency from JetBrains and the zerochan client dependency to your `build.gradle.kts`
 
 ```kotlin
 dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_corroutines_version") // required
-    implementation("com.github.magonxesp:zerochan-client:0.0.1")
+    implementation("io.github.magonxesp:zerochan-client:0.0.1")
 }
 ```
 

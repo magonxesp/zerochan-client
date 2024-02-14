@@ -3,32 +3,61 @@ plugins {
     kotlin("plugin.serialization") version "1.9.22"
     `java-library`
     `maven-publish`
+    signing
+    id("net.thebugmc.gradle.sonatype-central-portal-publisher") version "1.1.1"
 }
 
-group = "com.github.magonxesp"
+group = "io.github.magonxesp"
 version = "0.0.1"
 
 publishing {
-    repositories {
-        maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/magonxesp/zerochan-client")
-            credentials {
-                username = System.getenv("GITHUB_USERNAME")
-                password = System.getenv("GITHUB_TOKEN")
-            }
+    publications {
+        register<MavenPublication>("zerochan-client") {
+            artifactId = "zerochan-client"
+            from(components["java"])
         }
     }
-    publications {
-        register<MavenPublication>("gpr") {
-            from(components["java"])
+}
+
+signing {
+    sign(publishing.publications["zerochan-client"])
+}
+
+tasks.javadoc {
+    if (JavaVersion.current().isJava9Compatible) {
+        (options as StandardJavadocDocletOptions).addBooleanOption("html5", true)
+    }
+}
+
+centralPortal {
+    pom {
+        name = "Zerochan Client"
+        description = "Zerochan API client for kotlin"
+        url = "https://github.com/magonxesp/zerochan-client"
+        licenses {
+            license {
+                name = "The MIT License (MIT)"
+                url = "https://mit-license.org/"
+            }
+        }
+        developers {
+            developer {
+                id = "magonxesp"
+                name = "MagonxESP"
+                email = "magonxesp@gmail.com"
+                url = "https://github.com/magonxesp"
+            }
+        }
+        scm {
+            connection = "scm:git:git://github.com/magonxesp/zerochan-client.git"
+            developerConnection = "scm:git:ssh://github.com/magonxesp/zerochan-client.git"
+            url = "https://github.com/magonxesp/zerochan-client"
         }
     }
 }
 
 repositories {
     mavenCentral()
-    maven { setUrl("https://jitpack.io") }
 }
 
 dependencies {
