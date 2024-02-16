@@ -1,4 +1,4 @@
-package com.magonxesp.zerochanclient
+package io.github.magonxesp.zerochanclient
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

@@ -1,4 +1,4 @@
-package com.magonxesp.zerochanclient
+package io.github.magonxesp.zerochanclient
 
 enum class TimeUsed(val value: Int) {
     ALL_TIME(0),

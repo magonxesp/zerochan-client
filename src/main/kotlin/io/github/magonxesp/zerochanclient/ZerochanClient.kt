@@ -1,4 +1,4 @@
-package com.magonxesp.zerochanclient
+package io.github.magonxesp.zerochanclient
 
 import io.ktor.client.*
 import io.ktor.client.engine.cio.*

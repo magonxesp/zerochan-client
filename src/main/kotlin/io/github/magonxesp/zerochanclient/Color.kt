@@ -1,4 +1,4 @@
-package com.magonxesp.zerochanclient
+package io.github.magonxesp.zerochanclient
 
 enum class Color(val value: String) {
     RED("red"),

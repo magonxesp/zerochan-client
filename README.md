@@ -8,7 +8,7 @@ Add the `kotlinx-coroutines-core` dependency from JetBrains and the zerochan cli
 ```kotlin
 dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_corroutines_version") // required
-    implementation("io.github.magonxesp:zerochan-client:0.0.1")
+    implementation("io.github.magonxesp:zerochan-client:1.0.0")
 }
 ```
 
@@ -22,7 +22,7 @@ and call a method.
 Get items by one tag
 
 ```kotlin
-import com.magonxesp.zerochanclient.ZerochanClient
+import io.github.magonxesp.zerochanclient.ZerochanClient
 
 runBlocking {
     val client = ZerochanClient("<your app name>", System.getenv("ZEROCHAN_USERNAME"))
@@ -44,7 +44,7 @@ runBlocking {
 Get items by multiple tag
 
 ```kotlin
-import com.magonxesp.zerochanclient.ZerochanClient
+import io.github.magonxesp.zerochanclient.ZerochanClient
 
 runBlocking {
     val client = ZerochanClient("<your app name>", System.getenv("ZEROCHAN_USERNAME"))
@@ -66,7 +66,7 @@ runBlocking {
 Get a single item by id
 
 ```kotlin
-import com.magonxesp.zerochanclient.ZerochanClient
+import io.github.magonxesp.zerochanclient.ZerochanClient
 
 runBlocking {
     val client = ZerochanClient("<your app name>", System.getenv("ZEROCHAN_USERNAME"))
